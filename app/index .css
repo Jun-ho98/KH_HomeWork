@@ -1,1 +1,53 @@
+.card-area{
+    width: 80%;
+    height: 80%;
+    border: 3px solid black;
+    border-radius: 15px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    backface-visibility: hidden;
+    transition: .7s;
+}
+
+/* 앞면 , 뒷면 */
+.card > div{
+  position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;               /* 가운데 정렬 핵심 */
+    justify-content: center;     /* 가로 중앙 */
+    align-items: center;         /* 세로 중앙 */
+
+    font-weight: bold ;             /* 글자 크기 예시 */
+    color: rgb(255, 255, 255);  
+    border-radius: 15px;
+}
+
+.card-front{
+    background-color: red;
+}
+.card-back{
+    background-color: blue;
+    transform: rotateY(180deg);
+}
+
+.flip > .card{
+    transform: rotateY(180deg);
+}
+
+main{
+    background-color: rgba(85, 82, 82, 0.062);
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:repeat(10 , 100px); 
+    grid-auto-rows:  120px;
+    place-items: center center;
+    place-content: center center;
+}
 
